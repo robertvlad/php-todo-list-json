@@ -21,9 +21,26 @@
 
         file_put_contents($file_url, json_encode($list));
 
+    } else if(isset($_POST['index'])) {
+
+        $todoIndex = $_POST['index'];
+    
+        $list[$todoIndex]->done = !$list[$todoIndex]->done;
+
+        file_put_contents($file_url, json_encode($list));   
+
+    } else if(isset($_POST['indexDelete'])) {
+
+        $todoIndex = $_POST['indexDelete'];
+    
+        array_splice($list, $todoIndex, 1);
+
+        file_put_contents($file_url, json_encode($list));
+
     } else {
 
         header('Content-Type: application/json');
+
         echo json_encode($list);
 
     }

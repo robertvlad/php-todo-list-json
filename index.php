@@ -28,9 +28,9 @@
                     <h1 class="display-1">Todo List</h1>
                     <div class="form">
                         <ul class="d-flex flex-column">
-                            <li v-for="(item, index) in list" class="todo" :class="item.done ? 'done' : ''">
+                            <li v-for="(item, index) in list" class="todo" :class="item.done ? 'done' : ''" @click="taskDone(index)">
                                 {{ item.text }} 
-                                <span class="icon float-end">
+                                <span class="icon float-end" @click.stop="deleteTask(index)">
                                     <i class="fa-solid fa-trash float-end"></i>
                                 </span>
                             </li>

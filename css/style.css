@@ -49,6 +49,10 @@ ul {
     padding: 0;
 }
 
+li {
+    cursor: pointer;
+}
+
 .icon {
     background-color: #ff0000;
     padding: 7px;
